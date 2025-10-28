@@ -1,0 +1,866 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+/* --- New Responsive Header Styles --- */
+
+header {
+    background: #360125;
+    color: #fff;
+    padding: 0 20px; /* Use smaller padding for mobile */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Remove 'display: flex' from the header itself */
+}
+
+.header-container {
+    display: flex; /* Flex container for logo and menu icon/nav */
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Define header height */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header .logo {
+    font-size: 1.2rem; /* Adjusted for mobile */
+    font-weight: bold;
+    color: #ffcc00; /* Use accent color for logo */
+}
+
+/* Hamburger Menu Button (Default - Hidden on Desktop) */
+.menu-toggle {
+    display: none; 
+    font-size: 24px;
+    color: #ffcc00;
+}
+
+/* Desktop Navigation (Default - Always visible) */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Spacing between links */
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hide the mobile CTA on desktop */
+.main-nav .nav-cta-btn {
+    display: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* --- 📱 MOBILE MEDIA QUERY (480px and down) --- */
+/* ---------------------------------------------------- */
+
+@media (max-width: 768px) {
+    
+    /* Show the Hamburger Menu Icon */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Hide the default horizontal navigation */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 70px; /* Below the header height */
+        left: 0;
+        width: 100%;
+        background: #360125; /* Match header background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    /* When the menu is open (toggled by JS) */
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: flex-start; /* Align links to the left */
+        gap: 0; /* Remove gap */
+        padding: 10px 20px; 
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav ul li a {
+        padding: 15px 0; /* Larger touch targets */
+        font-size: 1.1rem;
+    }
+
+    /* Show the mobile CTA on phone */
+    .main-nav .nav-cta-btn {
+        display: inline-block;
+        background: #ffcc00;
+        color: #360125;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+        border: 2px solid #ffcc00;
+    }
+    .main-nav .nav-cta-btn:hover {
+        background: transparent;
+        color: #ffcc00;
+    }
+
+    /* Prevent body scrolling when the menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    height: 100vh;
+    /* You may want to darken the image slightly for better text readability */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),#003366 url('Background\ Image.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Changed to pure white for better contrast */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Added shadow for text pop */
+}
+
+.hero h2 { /* Changed from h1 to h2 based on your HTML */
+    font-size: 2.5rem; /* Slightly smaller and more balanced */
+    margin-bottom: 30px;
+    animation: fadeInDown 2s;
+}
+
+.hero .hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Base style for all Hero buttons/links */
+.hero-buttons button, 
+.hero-buttons a {
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for 'Explore Flats' (Primary button) */
+.hero-buttons .explore-btn {
+    background: #ffcc00; /* Yellow */
+    color: #003366; /* Dark Blue */
+}
+
+/* Style for 'Schedule a Visit' (Secondary button) */
+.hero-buttons .visit-hero-btn {
+    background: #360125; /* Header Maroon/Dark Red */
+    color: white;
+}
+
+.hero-buttons button:hover,
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons .explore-btn:hover {
+    background: #e6b800;
+}
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Flats Section */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- Scroll Animation Styles --- */
+
+/* Initial state for cards (hidden) */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    
+    /* Hover/Default transition */
+    transition: transform 0.3s ease; 
+    
+    /* Animation initial state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Final state for cards (visible) */
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Contact */
+.contact p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Contact Buttons */
+
+
+/* Footer */
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Animations (Keyframes) */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------- */
+/* --- 🌟 IMPRESSIVE CONTACT & SOCIAL STYLES 🌟 --- */
+/* ---------------------------------------------------- */
+
+/* Details Grid Layout */
+.contact-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Contact Item Link (Replaces the old .contact-item) */
+a.contact-item {
+    background: #fff;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(54, 1, 37, 0.1);
+    transition: transform 0.3s ease;
+    
+    /* Style as a card, not a default link */
+    text-decoration: none; 
+    color: #333; 
+    display: block; 
+}
+
+a.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+a.contact-item i {
+    font-size: 36px;
+    color: #360125; 
+    margin-bottom: 10px;
+}
+
+a.contact-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+a.contact-item strong {
+    color: #003366;
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* Social Links Container */
+.contact .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; 
+    margin: 25px 0 35px 0;
+}
+
+/* Social Link Icons (Enhanced size and color) */
+.contact .social-links a {
+    font-size: 40px; 
+    color: #360125; /* Dark color */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact .social-links a:hover {
+    color: #ffcc00; /* Yellow accent color on hover */
+    transform: scale(1.1); 
+}
+
+/* Social Links Title */
+.social-links-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #360125;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Call-to-Action Buttons Wrapper */
+.contact-buttons-wrapper {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* ---------------------------------------------------- */
+/* --- 🖼️ CARD SLIDER STYLES --- */
+/* ---------------------------------------------------- */
+
+.card .slider-container {
+    position: relative;
+    width: 100%;
+    /* 4:3 Aspect Ratio (adjust 75% for different height) */
+    padding-bottom: 75%; 
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card .image-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card .slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; 
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card .slider-img.active {
+    display: block; 
+}
+
+/* Slider Buttons */
+.card .prev-btn,
+.card .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 5;
+}
+
+.card .prev-btn {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.card .next-btn {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.card .prev-btn:hover,
+.card .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* ---------------------------------------------------- */
+/* --- 📱 RESPONSIVE MEDIA QUERIES --- */
+/* ---------------------------------------------------- */
+
+/* 768px and down (Tablets) */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        flex-direction: column; 
+        padding: 15px 20px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    /* Hero Section Adjustments */
+    .hero h2 {
+        font-size: 1.5rem; 
+        padding: 0 20px;
+    }
+
+    /* Flat Cards Adjustments: Change from 4 columns to 2 columns */
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); 
+    }
+
+    /* Contact Details Grid */
+    .contact-details-grid {
+        gap: 20px;
+    }
+
+    /* Contact Buttons Adjustments: Stack buttons vertically */
+    .visit-btn, .map-btn {
+        display: block; 
+        margin: 10px auto;
+        max-width: 80%;
+    }
+}
+
+/* 480px and down (Mobile Phones) */
+@media (max-width: 480px) {
+    /* General Section Padding */
+    section {
+        padding: 30px 15px;
+    }
+
+    /* Navigation Adjustments: Stack nav links vertically */
+    nav ul {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 60vh; 
+    }
+
+    /* Flat Cards Adjustments: Change from 2 columns to 1 column */
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Details Grid: Stack vertically on small screens */
+    .contact-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Buttons */
+    .visit-btn, .map-btn {
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* --- ENHANCED SECTION: VALUE, PROCESS & CTA --- */
+/* ---------------------------------------------------- */
+
+.value-process-cta {
+    padding: 60px 20px;
+    background-color: #e6f7ff; /* Light blue background for emphasis */
+    text-align: center;
+}
+
+.value-process-cta .section-title {
+    color: #003366;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    text-align: center; 
+}
+
+/* --- Expertise Grid --- */
+.expertise-grid {
+    margin-bottom: 60px;
+    text-align: center; 
+}
+
+.expertise-item {
+    padding: 25px 20px; /* Slightly more padding */
+    background: #fff;
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 0 6px 15px rgba(54, 1, 37, 0.1); /* Slightly deeper shadow */
+    margin-bottom: 25px;
+    
+    /* Animation and Hover Styles */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    opacity: 0; /* Initial state for scroll animation */
+    transform: translateY(30px);
+}
+
+.expertise-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.expertise-item:hover {
+    transform: translateY(-8px); /* Card lift effect */
+    box-shadow: 0 10px 25px rgba(54, 1, 37, 0.2);
+}
+
+.expertise-item h3 {
+    color: #360125;
+    margin: 15px 0;
+    font-size: 1.25rem;
+}
+
+.expertise-item p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.icon-main {
+    font-size: 38px; /* Slightly larger icon */
+    color: #003366; /* Dark blue from your scheme */
+    /* Add a subtle icon rotation effect */
+    transition: transform 0.4s ease-out;
+}
+
+.expertise-item:hover .icon-main {
+    transform: rotateY(180deg);
+}
+
+
+/* --- Process Steps --- */
+.process-steps {
+    margin-bottom: 60px;
+}
+
+.steps-container {
+    display: grid;
+    gap: 30px;
+}
+
+.step-card {
+    position: relative;
+    padding: 40px 20px 20px;
+    background: #fff;
+    border: 2px solid #003366;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 51, 102, 0.1);
+    /* Animation and Hover Styles */
+    transition: transform 0.3s ease-out, border-color 0.3s ease;
+    opacity: 0; /* Initial state for scroll animation */
+    transform: translateY(30px);
+}
+.step-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.step-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc00; /* Highlight border on hover */
+}
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #003366; /* Dark blue background */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 3px solid #e6f7ff;
+}
+
+.step-card h3 {
+    color: #360125;
+    margin-top: 10px;
+}
+
+.step-card p {
+    color: #555;
+    margin-top: 5px;
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+    background: #360125; /* Dark accent color */
+    color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.cta-banner h2 {
+    color: #ffcc00;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-cta-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffcc00;
+    color: #003366;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-cta-banner:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* --- Media Queries for Desktop Layouts (768px+) --- */
+@media (min-width: 768px) {
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    /* ADDED: Forces the title to span all 3 columns and align its text center. */
+    .expertise-grid .section-title {
+        grid-column: 1 / -1; 
+        text-align: center;
+    }
+
+    .expertise-item {
+        margin-bottom: 0;
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* ---------------------------------------------------- */
+/* --- 🌟 NEW: REVIEWS/TESTIMONIALS SECTION --- */
+/* ---------------------------------------------------- */
+
+.reviews-section {
+    padding: 60px 20px;
+    background-color: #f5f5f5; /* Use a slightly darker background than the about section */
+    text-align: center;
+}
+
+.reviews-section .section-title {
+    color: #360125;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.review-card .stars {
+    color: #ffcc00; /* Yellow star rating */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    color: #003366; /* Dark blue */
+}
+
+/* --- Review Submission Form Styles --- */
+.submit-title {  
+    color: #003366;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.review-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 45%; /* Side-by-side on desktop */
+    text-align: left;
+}
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.review-form textarea {
+    resize: vertical;
+}
+
+.submit-review-btn {
+    width: 100%;
+    background: #360125; /* Dark accent */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-review-btn:hover {
+    background: #5a023b;
+}
+
+/* --- Rating Input Specific Styles (Hidden Radio Buttons) --- */
+.rating-input {
+    direction: rtl; /* Stars from right to left */
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.rating-input input[type="radio"] {
+    display: none;
+}
+
+.rating-input label {
+    color: #ccc; /* Default grey color */
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0 2px;
+    transition: color 0.2s;
+}
+
+.rating-input input[type="radio"]:checked ~ label, /* Stars that are checked AND all stars to the right (rtl) */
+.rating-input label:hover, 
+.rating-input label:hover ~ label {
+    color: #ffcc00; /* Yellow on hover and selection */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .form-group {
+        flex: 1 1 100%; /* Stack inputs vertically on smaller screens */
+    }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Services - Real Estate</title>
+    <link rel="stylesheet" href="/Style.css"> 
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+     <div class="header-container">  
+        <div class="logo">🏠 SHREE RAM DEVELOPERS</div>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="main-nav">  
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#flats">DDA Flats</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+919671358267" class="nav-cta-btn">Call Now</a></li>
+            </ul>
+        </nav>
+     </div>
+    </header>
+
+    <section class="hero">               
+     <h2><b>“Your trusted real estate partner for premium property solutions in Delhi.”</b></h2>
+     <div class="hero-buttons">
+        <button onclick="scrollToFlats()" class="explore-btn">Explore Flats</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSesrQktbKH7Y04YLc_a3WlSGKPRyFGWG8dBbOYf5sRu8RWZKA/viewform?usp=header" target="_blank" class="visit-hero-btn">
+            Schedule a Visit
+        </a>
+     </div>
+    </section>
+
+    <section id="about" class="about">        
+        <h2>About Us</h2>
+        <p>
+            SRM Services is here to make your property journey easy and worry-free.
+            We believe finding a home should be a happy experience, not a stressful one.
+            That’s why we offer clear communication, fair prices, and personal support at
+            every step. Our team treats you like a partner, guiding you with care and honesty.
+            With us, it’s not just about property — it’s about trust, comfort, and new beginnings.
+        </p>
+    </section>
+    <section class="value-process-cta">
+     <div class="container">
+    
+        
+        <div class="expertise-grid">
+            <h2 class="section-title">Why Choose SHREE RAM DEVELOPERS?</h2>
+            
+            <div class="expertise-item">
+                <i class="fas fa-certificate icon-main"></i>
+                <h3>Verified DDA Experts</h3>
+                <p>We specialize exclusively in DDA properties, ensuring accurate paperwork and legal compliance every time.</p>
+            </div>
+            
+            <div class="expertise-item">
+                <i class="fas fa-search-dollar icon-main"></i>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden costs or surprise fees. Get a clear breakdown of brokerage and registry charges upfront.</p>
+            </div>
+
+            <div class="expertise-item">
+                <i class="fas fa-headset icon-main"></i>
+                <h3>Dedicated Support</h3>
+                <p>From site visits to final possession, our team provides personal support and answers your queries 24/7.</p>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+         <div class="process-steps">
+            <h2 class="section-title">Our Simple 3-Step Buying Process</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Consult & Search</h3>
+                    <p>Tell us your requirements, and we'll match you with verified DDA flats in your preferred sector.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Visit & Finalize</h3>
+                    <p>Schedule a guided property tour. Once you approve, we secure the flat with an initial deposit.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Legal & Possession</h3>
+                    <p>Our team manages all legal documentation, loan assistance, and smooth transfer of possession.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-banner">
+            <h2>Ready to find your flat?</h2>
+            <p>Speak directly to our DDA property specialist for free advice and personalized listings.</p>
+            <a href="tel:+919671358267" class="btn-cta-banner">
+                <i class="fas fa-phone-alt"></i> Call Now: +91 96713 58267
+            </a>
+        </div>
+
+     </div>
+    </section>
+
+    <section id="flats" class="flats">      
+        <h2>Available DDA Flats</h2>
+        <div class="card-container">   
+
+            <div class="card">         
+                <div class="slider-container">
+                    <div class="image-slider" data-card="lig">
+                        <img class="slider-img active" src="/LIG photos/LIG1.jpg" alt="LIG Flat - View 1">
+                        <img class="slider-img" src="/LIG photos/LIG2.jpg" alt="LIG Flat - View 2">
+                        <img class="slider-img" src="/LIG photos/LIG3.jpg" alt="LIG Flat - View 3">
+                        <img class="slider-img" src="/LIG photos/LIG4.jpg" alt="LIG Flat - View 4">
+                        <img class="slider-img" src="/LIG photos/LIG5.jpg" alt="LIG Flat - View 5">
+                    </div>
+                    <button class="prev-btn" onclick="moveSlide('lig', -1)">&#10094;</button>
+                    <button class="next-btn" onclick="moveSlide('lig', 1)">&#10095;</button>
+                </div>
+                <h3>LIG (Lower Income Group)</h3>
+                <p>Price: ₹25 Lakhs – ₹35 Lakhs</p>
+                <p>Size 49.9sqm - 60 Gaj</p>
+            </div>
+
+            <div class="card">           
+                <div class="slider-container">
+                    <div class="image-slider" data-card="mig">
+                        <img class="slider-img active" src="/MIG photos/MIG1.jpg" alt="MIG Flat - View 1">
+                        <img class="slider-img" src="/MIG photos/MIG2.jpg" alt="MIG Flat - View 2">
+                        <img class="slider-img" src="/MIG photos/MIG3.jpg" alt="MIG Flat - View 3">
+                    </div>
+                    <button class="prev-btn" onclick="moveSlide('mig', -1)">&#10094;</button>
+                    <button class="next-btn" onclick="moveSlide('mig', 1)">&#10095;</button>
+                </div>
+                <h3>MIG (Middle Income Group)</h3>
+                <p>Price: ₹45 Lakhs – ₹65 Lakhs</p>
+            </div>
+
+            <div class="card">         
+                <div class="slider-container">
+                    <div class="image-slider" data-card="hig">
+                        <img class="slider-img active" src="/HIG photos/HIG1.jpg" alt="HIG Flat - View 1">
+                        <img class="slider-img" src="/HIG photos/HIG2.jpg" alt="HIG Flat - View 2">
+                        <img class="slider-img" src="/HIG photos/HIG3.jpg" alt="HIG Flat - View 3">
+                    </div>
+                    <button class="prev-btn" onclick="moveSlide('hig', -1)">&#10094;</button>
+                    <button class="next-btn" onclick="moveSlide('hig', 1)">&#10095;</button>
+                </div>
+                <h3>HIG (High Income Group)</h3>
+                <p>Price: ₹75 Lakhs – ₹1.2 Cr</p>
+            </div>
+
+            <div class="card">     
+                <div class="slider-container">
+                    <div class="image-slider" data-card="ews">
+                        <img class="slider-img active" src="/EWS photos/Ews1.jpg" alt="EWS Flat - View 1">
+                        <img class="slider-img" src="/EWS photos/Ews2.jpg" alt="EWS Flat - View 2">
+                        <img class="slider-img" src="/EWS photos/Ews3.jpg" alt="EWS Flat - View 3">
+                    </div>
+                    <button class="prev-btn" onclick="moveSlide('ews', -1)">&#10094;</button>
+                    <button class="next-btn" onclick="moveSlide('ews', 1)">&#10095;</button>
+                </div>
+                <h3>EWS (Economically Weaker Section)</h3>
+                <p>Price: ₹10 Lakhs – ₹20 Lakhs</p>
+            </div>
+
+        </div> 
+    </section>      
+    
+    <section id="reviews" class="reviews-section">
+     <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        
+        <div class="testimonial-container">
+            <div class="review-card">
+                <div class="stars" aria-label="5 stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"SHREE RAM DEVELOPERS made buying our first DDA flat painless. Their team was transparent, professional, and handled all the complex paperwork efficiently. Highly recommended!"</p>
+                <p class="reviewer-name">— Anil K., Dwarka</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars" aria-label="5 stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"The entire process was quick and hassle-free. Finding a verified LIG flat in Delhi was easy with their guidance. Excellent customer support from start to finish."</p>
+                <p class="reviewer-name">— Priya S., Rohini</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="stars" aria-label="4 stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <p class="review-text">"Reliable service and fair brokerage fees. We appreciate the honest advice we received regarding property valuation. A trustworthy partner in real estate."</p>
+                <p class="reviewer-name">— Rakesh M., Vasant Kunj</p>
+            </div>
+        </div>
+
+        <h3 class="submit-title">Share Your Experience</h3>
+        
+        <form class="review-form" action="#" method="POST" onsubmit="alert('Thank you for your review! (Form submission is static on this demo)'); return false;">
+            <div class="form-group">
+                <label for="reviewerName">Your Name</label>
+                <input type="text" id="reviewerName" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Rating</label>
+                <div class="rating-input">
+                    <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="reviewContent">Your Review (Min 20 characters)</label>
+                <textarea id="reviewContent" name="content" rows="4" minlength="20" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-review-btn">Submit Your Review</button>
+        </form>
+     </div>
+    </section>
+
+    <section id="contact" class="contact">
+     <h2>Contact Us</h2>        
+    
+     <div class="contact-details-grid">        
+     <a href="tel:+919876543210" class="contact-item" target="_self">
+        <i class="fas fa-phone-alt"></i>
+        <p>Call Us Today</p>
+        <p><strong>+91 96713 58267</strong></p>
+     </a>
+    
+     <a href="mailto:info@sermservices.com" class="contact-item" target="_self">
+        <i class="fas fa-envelope-open-text"></i>
+        <p>Send an Email</p>
+        <p><strong>info@sermservices.com</strong></p>
+     </a>
+    
+     <a href="https://www.google.com/maps/place/Delhi" class="contact-item" target="_blank">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>Visit Our Office</p>
+        <p><strong>Delhi, India</strong></p>
+     </a>
+     </div>
+    
+     <div class="social-links-title">Connect with us on Social Media</div>
+     <div class="social-links">
+        <a href="https://www.instagram.com/dda_flats?igsh=MXdzejNsZ3RrNDhwcg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/17iupdwCnm/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:info@sermservices.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+     </div>
+
+     <!-- <div class="contact-buttons-wrapper">
+        <p>Click on the cards above for direct contact!</p>
+        </div> -->
+    </section>
+
+    <footer>
+        <p>© 2025 SRM Services. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>     
